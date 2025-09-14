@@ -1,5 +1,5 @@
 """
-URL configuration for projeto project.
+URL configuration for project project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -22,8 +22,11 @@ from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('recipes.urls')),  # Home
+
+    # Home do site = home da app recipes
+    path('', include(('recipes.urls', 'recipes'), namespace='recipes')),
 ]
 
+# Servindo media e static em debug
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

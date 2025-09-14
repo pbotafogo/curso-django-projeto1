@@ -9,12 +9,15 @@
             "name": "Python Debugger: Django",
             "type": "debugpy",
             "request": "launch",
+            "program": "${workspaceFolder}/manage.py",
             "args": [
                 "runserver"
             ],
             "django": true,
             "autoStartBrowser": false,
-            "program": "${workspaceFolder}\\manage.py"
+            "python": "${workspaceFolder}\\venv\\Scripts\\python.exe",   // ou caminho absoluto do seu interpretador
+            "pythonArgs": [
+                "-O"]
         }
     ]
 }
